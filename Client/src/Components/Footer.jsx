@@ -8,12 +8,12 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <a href="#" className="flex items-center">
               <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                alt="Logo"
+                src="https://example.com/logo.png" // Replace with your logo URL
+                alt="ExpenseConnect"
                 className="h-8 mr-3"
               />
               <span className="text-2xl font-semibold whitespace-nowrap dark:text-white">
-                YourBrand
+                ExpenseConnect
               </span>
             </a>
           </div>
@@ -24,13 +24,13 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Documentation
+                  <a href="#features" className="hover:underline">
+                    Features
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
-                    API Reference
+                  <a href="#api" className="hover:underline">
+                    API Documentation
                   </a>
                 </li>
               </ul>
@@ -41,12 +41,17 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    About
+                  <a href="#about" className="hover:underline">
+                    About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#team" className="hover:underline">
+                    Our Team
+                  </a>
+                </li>
+                <li>
+                  <a href="#careers" className="hover:underline">
                     Careers
                   </a>
                 </li>
@@ -58,12 +63,12 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="#privacy-policy" className="hover:underline">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#terms-of-service" className="hover:underline">
                     Terms of Service
                   </a>
                 </li>
@@ -78,11 +83,11 @@ const Footer = () => {
       <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md">
         <div className="sm:flex sm:items-center sm:justify-between container mx-auto px-4 py-4">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2024 YourBrand™. All rights reserved.
+            © 2024 ExpenseConnect™. All rights reserved.
           </span>
           <div className="flex space-x-6 sm:justify-center">
             <a
-              href="#"
+              href="https://twitter.com"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -90,7 +95,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://linkedin.com"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
