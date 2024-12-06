@@ -1,12 +1,11 @@
 'use client'
-
-import Header from "../Components/Header"
-import Footer from "../Components/Footer"
 import '../index.css'
+import Layout from "../Components/Layout"
 export default function Home() {
   return (
+    <Layout>
     <div className="bg-white">
-      <Header />
+ 
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"
@@ -64,7 +63,8 @@ export default function Home() {
           />
         </div>
       </div>
-      <Footer/>
+    
     </div>
+    </Layout>
   )
 }
