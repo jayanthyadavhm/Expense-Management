@@ -1,32 +1,38 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import React, { useState } from "react";
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const user = {
-  name: 'Jane Doe',
-  email: 'jane.doe@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=faces&fit=crop&w=256&h=256&q=80',
-}
+  name: "Jane Doe",
+  email: "jane.doe@example.com",
+  imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=faces&fit=crop&w=256&h=256&q=80",
+};
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Expense Tracking', href: '#', current: false },
-  { name: 'Insights', href: '#', current: false },
-  { name: 'Blockchain Audit', href: '#', current: false },
-  { name: 'Reports', href: '#', current: false },
-]
+  { name: "Dashboard", href: "#", current: true },
+  { name: "Expense Tracking", href: "#", current: false },
+  { name: "Insights", href: "#", current: false },
+  { name: "Blockchain Audit", href: "#", current: false },
+  { name: "Reports", href: "#", current: false },
+];
 
 const userNavigation = [
-  { name: 'Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Logout', href: '#' },
-]
+  { name: "Profile", href: "#" },
+  { name: "Settings", href: "#" },
+  { name: "Logout", href: "#" },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Dashboard() {
+  const [showRegisterForm, setShowRegisterForm] = useState(false);
+
+  const handleRegisterClick = () => {
+    setShowRegisterForm(true);
+  };
+
   return (
     <>
       <div className="min-h-full">
@@ -47,10 +53,12 @@ export default function Dashboard() {
                       <a
                         key={item.name}
                         href={item.href}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={item.current ? "page" : undefined}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-sm font-medium"
                         )}
                       >
                         {item.name}
@@ -87,6 +95,14 @@ export default function Dashboard() {
                   </Menu>
                 </div>
               </div>
+              <div className="ml-4">
+                <button
+                  onClick={handleRegisterClick}
+                  className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-medium text-white shadow hover:bg-indigo-600"
+                >
+                  Register
+                </button>
+              </div>
               <div className="-mr-2 flex md:hidden">
                 <DisclosureButton className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <span className="sr-only">Open main menu</span>
@@ -96,25 +112,6 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-
-          <DisclosurePanel className="md:hidden">
-            <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-              {navigation.map((item) => (
-                <DisclosureButton
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  aria-current={item.current ? 'page' : undefined}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
-                  )}
-                >
-                  {item.name}
-                </DisclosureButton>
-              ))}
-            </div>
-          </DisclosurePanel>
         </Disclosure>
 
         <header className="bg-white shadow">
@@ -124,15 +121,61 @@ export default function Dashboard() {
         </header>
         <main>
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            {/* Insert your content here */}
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-              <div className="col-span-2 bg-gray-100 p-6 shadow rounded-lg">Expense Summary</div>
-              <div className="bg-gray-100 p-6 shadow rounded-lg">AI Insights</div>
-              <div className="col-span-3 bg-gray-100 p-6 shadow rounded-lg">Blockchain Audit</div>
-            </div>
+            {showRegisterForm ? (
+              <div className="bg-white p-6 rounded-lg shadow">
+                <h2 className="text-xl font-bold mb-4">Register Your Business</h2>
+                <form>
+                  <div className="mb-4">
+                    <label htmlFor="businessName" className="block text-sm font-medium text-gray-700">
+                      Business Name
+                    </label>
+                    <input
+                      type="text"
+                      id="businessName"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label htmlFor="industry" className="block text-sm font-medium text-gray-700">
+                      Industry
+                    </label>
+                    <input
+                      type="text"
+                      id="industry"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label htmlFor="revenue" className="block text-sm font-medium text-gray-700">
+                      Annual Revenue
+                    </label>
+                    <input
+                      type="number"
+                      id="revenue"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            ) : (
+              <div>
+                {/* Main dashboard content */}
+                <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+                  <div className="col-span-2 bg-gray-100 p-6 shadow rounded-lg">Expense Summary</div>
+                  <div className="bg-gray-100 p-6 shadow rounded-lg">AI Insights</div>
+                  <div className="col-span-3 bg-gray-100 p-6 shadow rounded-lg">Blockchain Audit</div>
+                </div>
+              </div>
+            )}
           </div>
         </main>
       </div>
     </>
-  )
+  );
 }

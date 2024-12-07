@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "animate.css";  // Import the animation library
+import "animate.css"; // Import the animation library
 
 const features = [
   { name: "AI-Powered Insights", description: "Get personalized financial recommendations tailored to your business." },
@@ -17,11 +17,29 @@ const stats = [
 
 const FeaturesAndStats = () => {
   useEffect(() => {
-    const features = document.querySelectorAll('.feature');
-    features.forEach((feature, index) => {
-      feature.classList.add('animate__animated', 'animate__fadeInUp');
-      feature.style.animationDelay = `${index * 0.2}s`;
-    });
+    const observerOptions = {
+      threshold: 0.1, // Trigger when 10% of the element is visible
+    };
+
+    const animateOnIntersection = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate__animated", "animate__fadeInUp");
+          observer.unobserve(entry.target); // Stop observing once animated
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(animateOnIntersection, observerOptions);
+
+    const elementsToAnimate = document.querySelectorAll(".feature, .stat");
+    elementsToAnimate.forEach((el) => observer.observe(el));
+
+    return () => {
+      if (observer) {
+        elementsToAnimate.forEach((el) => observer.unobserve(el));
+      }
+    };
   }, []);
 
   return (
@@ -32,11 +50,11 @@ const FeaturesAndStats = () => {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Why Choose Our Solution?
           </h2>
-          <div className="mt-8 grid grid-cols-1 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
               <div
                 key={feature.name}
-                className="feature bg-white border border-gray-200 rounded-lg shadow-lg p-6 text-center animate__animated animate__fadeInUp"
+                className="feature bg-white border border-gray-200 rounded-lg shadow-lg p-6 text-center transition-transform transform hover:scale-105 hover:shadow-xl opacity-0" // Initially hidden
               >
                 <h3 className="text-xl font-semibold text-gray-900">{feature.name}</h3>
                 <p className="mt-4 text-base text-gray-500">{feature.description}</p>
@@ -57,9 +75,12 @@ const FeaturesAndStats = () => {
               Our AI-powered tool has already transformed financial management for businesses around the globe.
             </p>
           </div>
-          <div className="mt-10  grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.name} className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 text-center animate__animated animate__fadeInUp">
+              <div
+                key={stat.name}
+                className="stat bg-white border border-gray-200 rounded-lg shadow-lg p-6 text-center transition-transform transform hover:scale-105 hover:shadow-xl opacity-0" // Initially hidden
+              >
                 <dt className="text-sm font-medium text-gray-400">{stat.name}</dt>
                 <dd className="mt-2 text-3xl font-bold text-gray-900">{stat.value}</dd>
               </div>

@@ -38,14 +38,14 @@ const stats = [
 export default function Home() {
   return (
     <Layout>
-      <div className="bg-white">
+      <div className="bg-gradient-to-br from-indigo-50 via-white to-indigo-100">
         <div className="relative isolate px-6 pt-14 lg:px-8">
           <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div className="text-center">
-              <h1 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+              <h1 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl font-sans">
                 <Typewriter
                   words={[
-                    "Revolutionizing Expense Management for Small Businesses",
+                    "In the Era of 90% Failured StartUps do you wanna Survive",
                   ]}
                   loop={1} // Animates once
                   typeSpeed={100} // Typing speed in ms
@@ -54,6 +54,7 @@ export default function Home() {
                   cursorStyle="|"
                 />
               </h1>
+
               <p className="mt-8 text-lg text-gray-500 sm:text-xl">
                 Empower your business with AI-driven insights, secure blockchain
                 tracking, and predictive analytics to optimize spending, improve
@@ -98,7 +99,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <FeaturesAndStats/>
+      <FeaturesAndStats />
 
       {/* Stats Section */}
       <div className="bg-gray-900 py-24 sm:py-32">
