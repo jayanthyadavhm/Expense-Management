@@ -1,0 +1,9 @@
+Date,Department,Expense Type,Amount (USD),Revenue (USD),Operating Margin (%),Employee Count,Notes
+2024-01-01,Marketing,Advertising,5000,20000,25,50,Seasonal promotion
+2024-01-01,HR,Training,2000,,,50,Annual team training
+2024-01-01,IT,Software Licensing,3000,,,10,Renewed cloud service license
+2024-01-01,Operations,Facility Maintenance,1000,,,20,Routine maintenance
+2024-02-01,Marketing,Event Sponsorship,8000,25000,32,50,Trade fair sponsorship
+2024-02-01,HR,Recruitment,4000,,,12,New hires for Q1
+2024-02-01,IT,Equipment Purchase,6000,,,10,New laptops for developers
+2024-02-01,Operations,Utilities,1500,,,20,Electricity, water, etc.
