@@ -3,7 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 
 const authRoutes = require("./routes/auth.js");
-
+const userRoutes = require("./routes/user.js");
 const startupCompanyRoutes = require("./routes/startUpcompany.js");
 
 const connectDb = require("./lib/db.js");
@@ -19,7 +19,7 @@ const PORT = process.env.PORT;
 // Use routes
 app.use("/api/auth", authRoutes);
 app.use("/uploads", express.static("uploads"));
-
+app.use("/api/user", userRoutes);
 
 
 app.use("/api/startup-company", startupCompanyRoutes);
