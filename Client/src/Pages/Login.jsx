@@ -21,16 +21,9 @@ export default function Login() {
       const { fullName } = response.data;
       console.log(fullName);
       if (response.data) {
-        toast.success("Login successful!", {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-        });
 
-        // Navigate to dashboard after a short delay
-        setTimeout(() => {
           navigate("/dashboard");
-        }, 3000);
+       
       } else {
         toast.error(response.data || "Login failed!", {
           position: "top-center",

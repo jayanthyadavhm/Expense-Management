@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const companySchema = new mongoose.Schema({
   companyName: { type: String, required: true },
@@ -18,7 +18,7 @@ const companySchema = new mongoose.Schema({
   productsNeededDelivery: { type: String },
   collaborationType: { type: String },
   collaborationRegion: { type: String },
-  // createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, 
+  // createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 });
 
-module.exports = mongoose.model('Company', companySchema);
+module.exports = mongoose.model("Company", companySchema);
