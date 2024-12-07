@@ -44,7 +44,7 @@ export default function Dashboard() {
                 <div className="shrink-0">
                   <img
                     alt="Your Company Logo"
-                    src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+                    // src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
                     className="h-8 w-8"
                   />
                 </div>
@@ -177,6 +177,7 @@ export default function Dashboard() {
           </div>
         </main>
       </div>
+      
     </>
   );
 }

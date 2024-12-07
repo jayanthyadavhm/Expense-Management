@@ -7,6 +7,9 @@ import Login from "./Pages/Login"
 import Signup from "./Pages/Signup"
 import Product from "./Pages/Product"
 import ExpenseUploadPage from "./Pages/Insights"
+import CompanyForm from "./Pages/createStartup"
+import CollaborationForm from "./Pages/createStartup"
+import ShowCompanies from "./Pages/shows"
 function App() {
  
 
@@ -20,6 +23,8 @@ function App() {
      <Route path='/signup' element={<Signup/>}/>
      <Route path='/products' element={<Product/>}/>
      <Route path='/insights' element={<ExpenseUploadPage/>}/>
+     <Route path='/create' element={<CollaborationForm/>}/>
+     <Route path='/show' element={<ShowCompanies/>}/>
 
    </Routes>
     </>

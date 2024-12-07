@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 
 const authRoutes = require("./routes/auth.js");
 const datasetRoutes = require("./routes/datasetRoutes");
-
+const startupCompanyRoutes = require("./routes/startUpcompany.js");
 
 const connectDb = require("./lib/db.js");
 
@@ -22,6 +22,7 @@ app.use("/uploads", express.static("uploads"));
 
 
 app.use("/api/dataset", datasetRoutes);
+app.use("/api/startup-company", startupCompanyRoutes);
 
 app.listen(PORT, () => {
   console.log("Server is running on port: " + PORT);
