@@ -3,7 +3,7 @@ import "../index.css";
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 
 const navigation = [
   { name: "Features", href: "#features" },
@@ -14,6 +14,16 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate(); // Use the useNavigate hook
+
+  const handleLoginClick = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/dashboard"); // Redirect to dashboard if token exists
+    } else {
+      navigate("/login"); // Redirect to login if no token
+    }
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-md">
@@ -42,16 +52,19 @@ export default function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm/6 font-semibold text-gray-900"
+              className="text-sm/6 font-semibold text-gray-900 hover:bg-black hover:text-white rounded-lg px-3 py-2"
             >
               {item.name}
             </a>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to="/login" className="text-sm/6 font-semibold text-gray-900">
+          <button // Changed to button to call the handleLoginClick
+            onClick={handleLoginClick}
+            className="text-sm/6 font-semibold text-gray-900"
+          >
             Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+          </button>
         </div>
       </nav>
       <Dialog
@@ -95,7 +108,7 @@ export default function Header() {
               <div className="py-6">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg bg-black px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-800"
                 >
                   Log in
                 </a>
