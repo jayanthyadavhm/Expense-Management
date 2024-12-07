@@ -1,17 +1,29 @@
-const express=require("express");
-const cors = require('cors');
-const app=express();
+const express = require("express");
+const cors = require("cors");
 const dotenv = require("dotenv");
-dotenv.config();
-app.use(cors());
-const PORT=process.env.PORT;
-const authRoutes = require('./routes/auth.js');
+
+const authRoutes = require("./routes/auth.js");
+const datasetRoutes = require("./routes/datasetRoutes");
+
+
 const connectDb = require("./lib/db.js");
 
+dotenv.config();
+const app = express();
+
+app.use(cors());
 app.use(express.json());
+
+const PORT = process.env.PORT;
+
+// Use routes
 app.use("/api/auth", authRoutes);
+app.use("/uploads", express.static("uploads"));
+
+
+app.use("/api/dataset", datasetRoutes);
 
 app.listen(PORT, () => {
-    console.log("Server is running on port: " + PORT);
-    connectDb()
+  console.log("Server is running on port: " + PORT);
+  connectDb();
 });

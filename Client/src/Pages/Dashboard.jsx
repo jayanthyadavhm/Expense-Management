@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom"; // Import Link for routing
 
 const user = {
   name: "Jane Doe",
@@ -9,8 +10,8 @@ const user = {
 };
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Expense Tracking", href: "#", current: false },
+  { name: "Dashboard", href: "/", current: true },
+  { name: "Expense Tracking", href: "/insights", current: false },
   { name: "Insights", href: "#", current: false },
   { name: "Blockchain Audit", href: "#", current: false },
   { name: "Reports", href: "#", current: false },
@@ -50,9 +51,9 @@ export default function Dashboard() {
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href} // Use Link for navigation
                         aria-current={item.current ? "page" : undefined}
                         className={classNames(
                           item.current
@@ -62,7 +63,7 @@ export default function Dashboard() {
                         )}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

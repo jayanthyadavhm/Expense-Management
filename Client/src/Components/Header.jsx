@@ -16,6 +16,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
+    
     <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-md">
       <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
@@ -23,7 +24,7 @@ export default function Header() {
             <span className="sr-only">ExpenseConnect</span>
             <img
               alt="ExpenseConnect"
-              src="https://example.com/logo.png" // Replace with your logo URL
+              src="" // Replace with your logo URL
               className="h-8 w-auto"
             />
           </a>
