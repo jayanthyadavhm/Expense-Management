@@ -235,6 +235,10 @@ export default function Dashboard() {
        
 
         )}
+        
+
+
+
         {currentView === "expense" && <UploadExpenditure />}
         {currentView === "insights" && <Insights />}
         {currentView === "collaborate" && <ShowCompanies/>}
