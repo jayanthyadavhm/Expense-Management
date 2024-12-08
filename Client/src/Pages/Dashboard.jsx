@@ -6,10 +6,11 @@ import { useNavigate } from "react-router-dom";
 import UploadExpenditure from "./Insights";
 import ShowCompanies from "./shows";
 import FeaturesAndStats from "./Feature";
+import StartupCompanyForm from "./createStartup";
 
 const navigation = [
   { name: "Dashboard", view: "dashboard" },
-  { name: "Insights", view: "insights" },
+  { name: "Register", view: "register" }, 
   { name: "Collaborate", view: "collaborate" },
   { name: "Expense Track", view: "expense" },
   { name: "Profile", view: "profile" },
@@ -61,12 +62,12 @@ const ExpenseTrack = () => {
     </div>
   );
 };
-const Insights = () => {
+const Register = () => {
   return (
     <div className="max-w-7xl mx-auto mt-10 bg-white p-6 shadow rounded-lg">
-      <h1 className="text-2xl font-bold mb-4">Insights</h1>
+      <h1 className="text-2xl font-bold mb-4">Register</h1>
       <p className="text-gray-700">
-        Explore AI-based analytics, performance metrics, and detailed insights.
+        
       </p>
     </div>
   );
@@ -237,6 +238,7 @@ export default function Dashboard() {
         {currentView === "expense" && <UploadExpenditure />}
         {currentView === "insights" && <Insights />}
         {currentView === "collaborate" && <ShowCompanies/>}
+        {currentView==="register" && <StartupCompanyForm/>}
       </main>
     </div>
   );
