@@ -10,7 +10,7 @@ import StartupCompanyForm from "./createStartup";
 
 const navigation = [
   { name: "Dashboard", view: "dashboard" },
-  { name: "Register", view: "register" }, 
+  { name: "Register", view: "register" },
   { name: "Collaborate", view: "collaborate" },
   { name: "Expense Track", view: "expense" },
   { name: "Profile", view: "profile" },
@@ -62,13 +62,12 @@ const ExpenseTrack = () => {
     </div>
   );
 };
+
 const Register = () => {
   return (
     <div className="max-w-7xl mx-auto mt-10 bg-white p-6 shadow rounded-lg">
       <h1 className="text-2xl font-bold mb-4">Register</h1>
-      <p className="text-gray-700">
-        
-      </p>
+      <p className="text-gray-700"></p>
     </div>
   );
 };
@@ -96,7 +95,7 @@ const Collaborate = () => {
 };
 
 export default function Dashboard() {
-  const [currentView, setCurrentView] = useState("profile");
+  const [currentView, setCurrentView] = useState("dashboard"); // Set default view to Dashboard
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -223,26 +222,13 @@ export default function Dashboard() {
         {currentView === "dashboard" && (
           <div className="max-w-7xl mx-auto mt-10 p-6 bg-gray-100 shadow rounded-lg">
             <h1 className="text-3xl font-bold">Dashboard</h1>
-            
-                    
-
-
-
-
-
-            <FeaturesAndStats/>
+            <FeaturesAndStats />
           </div>
-       
-
         )}
-        
-
-
-
         {currentView === "expense" && <UploadExpenditure />}
-        {currentView === "insights" && <Insights />}
-        {currentView === "collaborate" && <ShowCompanies/>}
-        {currentView==="register" && <StartupCompanyForm/>}
+        {currentView === "insights" && <UploadExpenditure />}
+        {currentView === "collaborate" && <ShowCompanies />}
+        {currentView === "register" && <StartupCompanyForm />}
       </main>
     </div>
   );
