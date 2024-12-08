@@ -8,8 +8,8 @@ import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 const navigation = [
   { name: "Features", href: "#features" },
   { name: "Solutions", href: "#solutions" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Company", href: "#company" },
+  { name: "About", href: "#about" },
+  { name: "Contact us", href: "#contact" },
 ];
 
 export default function Header() {

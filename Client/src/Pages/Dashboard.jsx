@@ -2,11 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
+import UploadExpenditure from "./Insights";
+import ShowCompanies from "./shows";
+import FeaturesAndStats from "./Feature";
 
 const navigation = [
   { name: "Dashboard", view: "dashboard" },
   { name: "Insights", view: "insights" },
   { name: "Collaborate", view: "collaborate" },
+  { name: "Expense Track", view: "expense" },
   { name: "Profile", view: "profile" },
 ];
 
@@ -35,6 +40,27 @@ const Profile = ({ user }) => {
   );
 };
 
+const ExpenseTrack = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/insights");
+  };
+
+  return (
+    <div className="max-w-7xl mx-auto mt-10 bg-white p-6 shadow rounded-lg">
+      <h1
+        className="text-2xl font-bold mb-4 hover:underline cursor-pointer"
+        onClick={handleNavigation}
+      >
+        Expense Track
+      </h1>
+      <p className="text-gray-700">
+        Explore AI-based analytics, performance metrics, and expense tracking.
+      </p>
+    </div>
+  );
+};
 const Insights = () => {
   return (
     <div className="max-w-7xl mx-auto mt-10 bg-white p-6 shadow rounded-lg">
@@ -47,9 +73,20 @@ const Insights = () => {
 };
 
 const Collaborate = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/collaborate");
+  };
+
   return (
     <div className="max-w-7xl mx-auto mt-10 bg-white p-6 shadow rounded-lg">
-      <h1 className="text-2xl font-bold mb-4">Collaborate</h1>
+      <h1
+        className="text-2xl font-bold mb-4 hover:underline cursor-pointer"
+        onClick={handleNavigation}
+      >
+        Collaborate
+      </h1>
       <p className="text-gray-700">
         Team up with others, share ideas, and work on exciting projects together.
       </p>
@@ -63,6 +100,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -86,6 +124,7 @@ export default function Dashboard() {
     localStorage.removeItem("token");
     localStorage.clear();
     setUser(null);
+    navigate("/");
   };
 
   if (loading) {
@@ -183,10 +222,21 @@ export default function Dashboard() {
         {currentView === "dashboard" && (
           <div className="max-w-7xl mx-auto mt-10 p-6 bg-gray-100 shadow rounded-lg">
             <h1 className="text-3xl font-bold">Dashboard</h1>
+            
+                    
+
+
+
+
+
+            <FeaturesAndStats/>
           </div>
+       
+
         )}
+        {currentView === "expense" && <UploadExpenditure />}
         {currentView === "insights" && <Insights />}
-        {currentView === "collaborate" && <Collaborate />}
+        {currentView === "collaborate" && <ShowCompanies/>}
       </main>
     </div>
   );
