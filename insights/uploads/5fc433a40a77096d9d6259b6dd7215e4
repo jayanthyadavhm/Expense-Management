@@ -1,0 +1,42 @@
+Date,Department,Expense Type,Amount (USD),Revenue (USD),Operating Margin (%),Employee Count,Notes
+2024-01-01,Marketing,Advertising,5000,20000,25,50,Seasonal promotion
+2024-01-01,HR,Training,2000,,,,Employee upskilling
+2024-01-01,IT,Software Licensing,3000,,,,Annual license renewal
+2024-01-01,Operations,Facility Maintenance,1000,,,,Routine maintenance
+2024-02-01,Marketing,Event Sponsorship,8000,25000,32,50,Trade fair sponsorship
+2024-02-01,HR,Recruitment,4000,,,,New hires for Q1
+2024-02-01,IT,Equipment Purchase,6000,,,,New laptops for developers
+2024-02-01,Operations,Utilities,1500,,,,Electricity, water, etc.
+2024-03-01,Finance,Audit Services,5000,,,,Quarterly audit
+2024-03-01,Marketing,Content Creation,3500,15000,23,50,Social media campaigns
+2024-03-01,HR,Employee Wellness,1000,,,,Annual wellness programs
+2024-03-01,IT,Cloud Services,7000,,,,Increased storage capacity
+2024-03-01,Operations,Inventory Management,2500,,,,Warehouse optimization
+2024-04-01,Marketing,Digital Ads,4500,18000,25,50,Product launch ads
+2024-04-01,HR,Legal Compliance,3000,,,,Policy reviews and compliance
+2024-04-01,IT,Cybersecurity,4000,,,,Upgraded firewall and monitoring tools
+2024-04-01,Operations,Logistics,6000,,,,New fleet for product delivery
+2024-05-01,Finance,Tax Consultation,3000,,,,Annual tax filing
+2024-05-01,Marketing,Influencer Marketing,5000,20000,28,50,Promotions with influencers
+2024-05-01,HR,Team Building,1500,,,,Outdoor activity for employees
+2024-05-01,IT,Network Maintenance,2500,,,,Server upgrades
+2024-05-01,Operations,Cleaning Services,1200,,,,Deep cleaning of premises
+2024-06-01,Finance,Budget Planning,2000,,,,Mid-year budget adjustments
+2024-06-01,Marketing,PR Campaign,6000,22000,27,50,Brand awareness initiative
+2024-06-01,HR,Employee Benefits,4000,,,,Health and dental plans
+2024-06-01,IT,Data Migration,8000,,,,Migration to new database
+2024-06-01,Operations,Safety Inspections,1800,,,,Ensuring compliance with safety standards
+2024-07-01,Marketing,TV Ads,10000,40000,30,50,Summer campaign
+2024-07-01,HR,Intern Stipends,3000,,,,New intern program
+2024-07-01,IT,Tech Support,2500,,,,Hardware troubleshooting
+2024-07-01,Operations,Transport Services,4000,,,,Seasonal logistics
+2024-08-01,Finance,Investment Planning,7000,,,,Future growth strategies
+2024-08-01,Marketing,SEO Optimization,2000,8000,20,50,Improved website ranking
+2024-08-01,HR,Diversity Training,3000,,,,Inclusion workshops
+2024-08-01,IT,AI Development,12000,,,,Custom AI tools for data analysis
+2024-08-01,Operations,Vendor Management,1500,,,,Strengthening supplier relations
+2024-09-01,Finance,Compliance Review,4000,,,,New financial regulations
+2024-09-01,Marketing,Email Marketing,1500,6000,18,50,Customer retention campaign
+2024-09-01,HR,Retirement Plans,5000,,,,Pensions and end-of-service benefits
+2024-09-01,IT,Software Updates,3000,,,,Critical patches and updates
+2024-09-01,Operations,Emergency Repairs,2000,,,,Unexpected equipment failure

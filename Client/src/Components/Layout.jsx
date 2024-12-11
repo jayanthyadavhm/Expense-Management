@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 const Layout = (props) => {
   return (
     <>
-      <Header />
+      <Header/>
       <main style={{ minHeight: "80vh" }}>{props.children}</main>
       <Footer />
     </>
